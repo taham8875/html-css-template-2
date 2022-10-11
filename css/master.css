@@ -306,7 +306,49 @@ header .form i {
   margin: 0 auto 100px;
   max-width: 100%;
   color: #666;
+  line-height: 2;
 }
 
 
 /* end main-heading */
+
+
+/* start services */
+
+.services .services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-column-gap: 40px;
+  grid-row-gap: 60px;
+}
+
+.services .srv-box {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .services .srv-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.services .srv-box i {
+  padding: 0 30px 30px;
+}
+
+.services .srv-box h3 {
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+
+.services .srv-box p {
+  color: #777;
+  line-height: 2;
+}
+
+
+/* end services */
