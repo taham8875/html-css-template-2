@@ -1,11 +1,33 @@
 /* start variables */
 
 :root {
-  --main-color: #19c8fa;
+  --main-color: rgb(25, 200, 250);
 }
 
 
 /* end variables */
+
+
+/* start scrollbar */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(25, 200, 250, 0.45);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-color);
+}
+
+
+/* end scrollbar */
 
 * {
   box-sizing: border-box;
@@ -93,9 +115,56 @@ header nav {
 }
 
 header nav .toggle-menu {
+  margin-right: 15px;
+  width: 30px;
+  height: 25px;
   color: white;
-  font-size: 22px;
-  padding: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+header nav .toggle-menu span {
+  background-color: white;
+  height: 1.5px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2 ease;
+}
+
+header nav .toggle-menu span:nth-child(1) {
+  top: 0px;
+}
+
+header nav .toggle-menu span:nth-child(2) {
+  top: 12px;
+}
+
+header nav .toggle-menu span:nth-child(3) {
+  top: 24px;
+}
+
+header nav .toggle-menu:hover span:nth-child(2) {
+  opacity: 0;
+}
+
+header nav .toggle-menu:hover span:nth-child(1),
+header nav .toggle-menu:hover span:nth-child(2),
+header nav .toggle-menu:hover span:nth-child(3) {
+  top: 12px;
+  background-color: red;
+}
+
+header nav .toggle-menu:hover span:nth-child(1) {
+  transform: rotate(225deg);
+}
+
+header nav .toggle-menu:hover span:nth-child(3) {
+  transform: rotate(-225deg);
 }
 
 @media (min-width: 768px) {
@@ -227,6 +296,11 @@ header .form i {
   transform: translateY(-50%);
   color: #ddd;
   font-size: 40px;
+}
+
+.landing .fa-angle-left,
+.landing .fa-angle-right {
+  cursor: pointer;
 }
 
 .landing .fa-angle-left {
@@ -513,6 +587,7 @@ header .form i {
   background-color: var(--main-color);
   display: block;
   width: fit-content;
+  width: -moz-fit-content;
   margin: 30px auto;
   text-decoration: none;
 }
@@ -1095,3 +1170,156 @@ header .form i {
 
 
 /* end subscribe */
+
+
+/* start contact */
+
+.contact {
+  padding-bottom: 60px;
+}
+
+.contact .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .contact .content {
+    flex-direction: column;
+  }
+}
+
+.contact .content form {
+  flex-basis: 70%;
+}
+
+.contact .content form * {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #777;
+}
+
+.contact .content form textarea {
+  height: 200px;
+}
+
+.contact .content form input[type="submit"] {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  background-color: var(--main-color);
+  border: none;
+  margin-left: auto;
+}
+
+.contact .content .info {
+  flex-basis: 25%;
+}
+
+@media (max-width: 767px) {
+  .contact .content .info {
+    order: -1;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -55px;
+    margin-bottom: 35px;
+  }
+}
+
+.contact .content .info h4 {
+  text-transform: uppercase;
+  color: #777;
+  padding-bottom: 20px;
+  font-weight: normal;
+}
+
+.contact .content .info h4:nth-of-type(2) {
+  margin-top: 50px;
+}
+
+.contact .content .info address {
+  line-height: 2;
+}
+
+.contact .content .info span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+/* end contact */
+
+
+/* start footer */
+
+footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image: url(../images/subscribe.jpg);
+  background-size: cover;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.626);
+}
+
+footer .container {
+  position: relative;
+}
+
+footer img {
+  margin-bottom: 20px;
+}
+
+footer p:nth-of-type(1) {
+  position: relative;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+footer p:nth-of-type(1)::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 120px;
+  background-color: white;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer .social-icons {
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+footer .social-icons a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+footer .copyright {
+  margin-top: 40px;
+}
+
+footer .copyright span {
+  font-weight: bold;
+  color: var(--main-color);
+}
+
+
+/* end footer */
