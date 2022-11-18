@@ -233,9 +233,10 @@ header .form i {
 .landing {
   min-height: 100vh;
   background-color: #1f2021;
-  background-image: url(../images/landing.jpg);
+  background-image: url(../images/landing3.jpg);
   background-size: cover;
   position: relative;
+  transition: 1s ease-in-out background-image;
 }
 
 .landing .overlay {
@@ -604,7 +605,6 @@ header .form i {
   width: 100%;
   background-color: white;
   position: absolute;
-  /* transform: translateY(-100%); */
   padding: 10px;
   z-index: -1;
   transition: 0.3s;

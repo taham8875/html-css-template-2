@@ -44,3 +44,45 @@ convertButton.addEventListener("click", function(event) {
       valueTo.style.color = "red";
     });
 });
+
+// image slider
+
+slideLeft = document.querySelector(".landing .fa-angle-left");
+slideRight = document.querySelector(".landing .fa-angle-right");
+landing = document.querySelector(".landing");
+currnetLandingBackground = 10002;
+bullets = Array.from(document.querySelectorAll(".landing .bullets li"));
+
+slideLeft.addEventListener("click", function() {
+  console.log("asdf");
+  landing.style.backgroundImage = `url(../images/landing${
+    Math.abs(currnetLandingBackground % 3) + 1
+  }.jpg)`;
+  bullets.forEach((element) => {
+    element.classList.remove("active");
+  });
+  document
+    .querySelector(
+      `.landing .bullets li._${Math.abs(currnetLandingBackground % 3) + 1}`
+    )
+    .classList.add("active");
+  currnetLandingBackground++;
+});
+
+slideRight.addEventListener("click", function() {
+  console.log("asdf");
+  landing.style.backgroundImage = `url(../images/landing${
+    Math.abs(currnetLandingBackground-- % 3) + 1
+  }.jpg)`;
+  bullets.forEach((element) => {
+    element.classList.remove("active");
+  });
+  document
+    .querySelector(
+      `.landing .bullets li._${Math.abs(currnetLandingBackground % 3) + 1}`
+    )
+    .classList.add("active");
+  currnetLandingBackground--;
+});
+
+// I totally admit that it is not a good approach
