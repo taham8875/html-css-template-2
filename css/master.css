@@ -337,6 +337,54 @@ header .form i {
 /* end landing */
 
 
+/* start currency converter */
+
+.currency .box {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.currency .box form {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.currency .box form input,
+.currency .box form datalist {
+  margin: 20px 15px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+}
+
+.currency .box input[list="country-from"]:focus,
+.currency .box input[list="country-to"]:focus,
+.currency .box input[list="value-from"]:focus,
+.currency .box input[list="value-to"]:focus {
+  outline: none;
+}
+
+.currency .box form button {
+  padding: 15px;
+  margin-bottom: 20px;
+  color: white;
+  background-color: var(--main-color);
+  border: none;
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  grid-column: 1/-1;
+  cursor: pointer;
+}
+
+
+/* end currency converter */
+
+
 /* start main-heading */
 
 .main-heading {
