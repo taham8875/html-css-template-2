@@ -33,5 +33,14 @@ convertButton.addEventListener("click", function(event) {
     })
     .then((data) => {
       valueTo.value = valueFrom.value * Object.entries(data)[1][1];
+      valueTo.style.color = "initial";
+      if (valueTo.value === "NaN") {
+        valueTo.value = "invalid";
+        valueTo.style.color = "red";
+      }
+    })
+    .catch((error) => {
+      valueTo.value = "invalid";
+      valueTo.style.color = "red";
     });
 });
