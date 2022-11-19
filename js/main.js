@@ -55,7 +55,7 @@ bullets = Array.from(document.querySelectorAll(".landing .bullets li"));
 
 slideLeft.addEventListener("click", function() {
   console.log("asdf");
-  landing.style.backgroundImage = `url(../images/landing${
+  landing.style.backgroundImage = `url(images/landing${
     Math.abs(currnetLandingBackground % 3) + 1
   }.jpg)`;
   bullets.forEach((element) => {
@@ -71,7 +71,7 @@ slideLeft.addEventListener("click", function() {
 
 slideRight.addEventListener("click", function() {
   console.log("asdf");
-  landing.style.backgroundImage = `url(../images/landing${
+  landing.style.backgroundImage = `url(images/landing${
     Math.abs(currnetLandingBackground-- % 3) + 1
   }.jpg)`;
   bullets.forEach((element) => {
